@@ -4,3 +4,20 @@ spring:
   profiles:
     active: sse
 
+# Actuator 配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true
+
+# 添加 MCP 相关日志
+logging:
+  level:
+    org.springframework.ai.mcp: DEBUG
+
