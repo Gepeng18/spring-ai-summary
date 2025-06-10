@@ -58,7 +58,6 @@ public class ParallelizationWorkflowTest {
         
         WorkflowResponse response = parallelWorkflow.execute(request);
         
-        // 验证响应
         assertNotNull(response);
         assertTrue(response.isSuccess());
         assertNotNull(response.getContent());

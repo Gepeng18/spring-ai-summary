@@ -56,7 +56,6 @@ public class ChainWorkflowTest {
         
         WorkflowResponse response = chainWorkflow.execute(request);
         
-        // 验证响应
         assertNotNull(response);
         assertTrue(response.isSuccess());
         assertNotNull(response.getContent());

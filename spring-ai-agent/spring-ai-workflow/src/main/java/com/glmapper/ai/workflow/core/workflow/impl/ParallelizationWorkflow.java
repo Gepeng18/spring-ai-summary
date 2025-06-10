@@ -47,12 +47,11 @@ public class ParallelizationWorkflow implements Workflow {
                 futures.add(future);
             }
             
-            // 等待所有异步任务完成
+            // 等待所有异步任务完成, 并收集所有结果
             CompletableFuture<Void> allFutures = CompletableFuture.allOf(
                     futures.toArray(new CompletableFuture[0])
             );
             
-            // 收集所有结果
             CompletableFuture<Map<String, Object>> resultFuture = allFutures.thenApply(v ->
                     futures.stream()
                             .map(CompletableFuture::join)

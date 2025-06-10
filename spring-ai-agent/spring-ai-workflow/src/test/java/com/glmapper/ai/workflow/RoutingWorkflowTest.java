@@ -74,7 +74,6 @@ public class RoutingWorkflowTest {
         
         WorkflowResponse response = routingWorkflow.execute(request);
 
-        // 验证响应
         assertNotNull(response);
         assertTrue(response.isSuccess());
         assertNotNull(response.getContent());
